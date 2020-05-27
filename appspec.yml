@@ -1,0 +1,13 @@
+version: 0.0
+os: linux
+files:
+  - source: ./
+    destination: /home/ubuntu/myapp
+hooks:
+  ApplicationStart:
+    - location: run.sh
+      runas: ubuntu
+  ValidateService:
+    - location: validate.sh
+      timeout: 30
+      runas: ubuntu    
